@@ -1,6 +1,7 @@
 package dev.lenny;
 
 public class LexicographicComparison {
+  // Алгоритм лексикографического сравнения
   public int compareStrings(String firstString, String secondString) {
     int lengthComparison = Integer.compare(firstString.length(), secondString.length());
     if (lengthComparison != 0) {
@@ -14,7 +15,7 @@ public class LexicographicComparison {
       char charSecond = secondString.charAt(i);
 
       if (charFirst != charSecond) {
-        return charFirst - charSecond > 0 ? 1 : -1;
+        return charFirst - charSecond;
       }
     }
 
