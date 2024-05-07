@@ -2,23 +2,17 @@ package dev.lenny;
 
 public class LexicographicComparison {
   // Алгоритм лексикографического сравнения
-  public int compareStrings(String firstString, String secondString) {
-    int lengthComparison = Integer.compare(firstString.length(), secondString.length());
-    if (lengthComparison != 0) {
-      return lengthComparison;
-    }
-
-    int minLength = Math.min(firstString.length(), secondString.length());
-
-    for (int i = 0; i < minLength; i++) {
-      char charFirst = firstString.charAt(i);
-      char charSecond = secondString.charAt(i);
-
-      if (charFirst != charSecond) {
-        return charFirst - charSecond;
+  public int compareStrings(String str1, String str2) {
+    int minLen = Math.min(str1.length(), str2.length());
+    for (int i = 0; i < minLen; i++) {
+      if (str1.charAt(i) != str2.charAt(i)) {
+        return str1.charAt(i) - str2.charAt(i);
       }
     }
 
+    if (str1.length() != str2.length()) {
+      return str1.length() - str2.length();
+    }
     return 0;
   }
 }
