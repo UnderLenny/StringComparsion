@@ -37,11 +37,6 @@ public class CompareToTester {
         System.out.println("--------- Test " + i + " is successful");
       }
 
-      System.out.println("Test " + i + ":");
-      System.out.println("  String 1: " + str1);
-      System.out.println("  String 2: " + str2);
-      System.out.println("  Result: " + actualResult);
-      System.out.println("  Expected: " + exceptedResult);
     }
 
     assertTrue(allTestsPassed);
