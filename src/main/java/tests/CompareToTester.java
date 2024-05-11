@@ -21,8 +21,8 @@ public class CompareToTester {
 
     for (int i = 1; i <= 1000; i++) {
       // Генерация двух случайных строк
-      String str1 = generator.generateRandomString(20, true, true);
-      String str2 = generator.generateRandomString(20, true, true);
+      String str1 = generator.randomString (20, false, true);
+      String str2 = generator.randomString (20, true, true);
 
       // Сравнение с использованием пользовательского метода(актуальный результат)
       int actualResult = comparator.compareStrings(str1, str2);

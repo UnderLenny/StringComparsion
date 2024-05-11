@@ -14,21 +14,21 @@ public class RandomString {
    * Генерирует случайную строку заданной длины с использованием указанных опций.
    *
    * @param n Длина генерируемой строки.
-   * @param includeLetters Включить ли буквы в генерируемую строку?
-   * @param includeNumbers Включить ли цифры в генерируемую строку?
+   * @param f Флаг, указывающий, что в строке должны содержаться только буквы.
+   * @param k Флаг, указывающий, что в строке должны содержаться только цифры.
    * @return Сгенерированная случайная строка.
    */
-  public String generateRandomString(int n, boolean includeLetters, boolean includeNumbers) {
+  public String randomString(int n, boolean f, boolean k) {
     StringBuilder sb = new StringBuilder(n);
     String characters;
 
-    if (!includeLetters && !includeNumbers) {
-      throw new IllegalArgumentException("includeLetters и includeNumbers не могут быть одновременно ложными.");
+    if (!f && !k) {
+      throw new IllegalArgumentException("Оба флага не могут быть одновременно ложными.");
     }
 
-    if (includeLetters && !includeNumbers) {
+    if (f) {
       characters = LETTERS;
-    } else if (!includeLetters && includeNumbers) {
+    } else if (k) {
       characters = NUMBERS;
     } else {
       characters = LETTERS + NUMBERS;
